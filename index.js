@@ -1,4 +1,4 @@
-console.log("Rock Papper Scissors Game");
+console.log("Rock Paper Scissors Game");
 const humanChoice = prompt("Enter your choice: 'rock' 'paper' or 'scissors'")
 const gameChoice = ["rock", "paper", "scissors"];
 
@@ -16,7 +16,40 @@ function getHumanChoice(choice){
 
 function playRound(humanChoice, getComputerChoice){
 
-    console.log(humanChoice, getComputerChoice)
+    switch (humanChoice){
+        case "rock":
+            if (getComputerChoice === "scissors"){
+                console.log("You win! Rock beats Scissors")
+                break
+            }else if (getComputerChoice === "paper"){
+               console.log("You lose! Paper beats Rock")
+               break
+            }else{
+                console.log("Draw same choice")
+            }
+        case "paper":
+            if  (getComputerChoice === "rock"){
+                console.log("You win! Paper beats Rock")
+                break
+            }else if (getComputerChoice === "scissors"){
+                console.log("You lose! Scissors beats Paper")
+                break
+            }else{
+                console.log("Draw same choice")
+            }
+        case "scissors":
+            if (getComputerChoice === "paper"){
+                console.log("You win! Scissors beats Paper")
+                break
+            }else if (getComputerChoice === "rock"){
+                console.log("You lose! Scissors beats Rock")
+                break
+            }else {
+                console.log("Draw same choice")
+            }
+        default:
+            return "invalid selection"
+    }
 }
 
 
@@ -24,10 +57,7 @@ const humanSelection = getHumanChoice(humanChoice);
 const computerSelection = getComputerChoice();
 
 function playGame(){
-    let start = 0
-    while (start < 5){
-        playGame
-    }
+    console.log(playRound(humanChoice, getComputerChoice()))
 }
 
 playGame()
